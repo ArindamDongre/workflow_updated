@@ -1,0 +1,36 @@
+/* src/components/ViewWorkflows.css */
+
+.view-workflows-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.workflows-list {
+  margin-bottom: 20px;
+}
+
+.json-input-container {
+  margin-top: 20px;
+}
+
+.button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.success-message {
+  color: green;
+  font-size: 14px;
+  margin-top: 10px;
+}
