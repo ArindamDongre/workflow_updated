@@ -1,14 +1,21 @@
-/* src/components/ViewWorkflows.css */
-
 .view-workflows-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   padding: 20px;
-  background-color: #f9f9f9;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.view-workflows-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .workflows-list {
+  margin-bottom: 20px;
+}
+
+.workflows-buttons {
+  display: flex;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
@@ -16,21 +23,21 @@
   margin-top: 20px;
 }
 
-.button {
-  margin-top: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
+.json-input-container textarea {
+  width: 100%;
 }
 
 .error-message {
   color: red;
-  font-size: 14px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .success-message {
   color: green;
-  font-size: 14px;
+  margin-top: 20px;
+}
+
+.button {
+  display: block;
   margin-top: 10px;
 }

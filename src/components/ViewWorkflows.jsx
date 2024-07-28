@@ -1,4 +1,3 @@
-// src/components/ViewWorkflows.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -41,6 +40,26 @@ const ViewWorkflows = () => {
     }
   };
 
+  const handleDeleteWorkflow = async () => {
+    try {
+      await axios.delete(`/api/delete-workflow/${selectedWorkflowId}`);
+      setWorkflows(workflows.filter(workflow => workflow.id !== selectedWorkflowId));
+      setSelectedWorkflowId('');
+      setSuccessMessage('Workflow deleted successfully!');
+      setError('');
+    } catch (error) {
+      setError('Error deleting workflow.');
+      setSuccessMessage('');
+    }
+  };
+
+  const handleEditWorkflow = () => {
+    const selectedWorkflow = workflows.find(workflow => workflow.id === selectedWorkflowId);
+    if (selectedWorkflow) {
+      navigate(`/edit-workflow/${selectedWorkflowId}`, { state: { workflow: selectedWorkflow } });
+    }
+  };
+
   return (
     <div className="view-workflows-container">
       <h1>View Workflows</h1>
@@ -58,6 +77,8 @@ const ViewWorkflows = () => {
             </option>
           ))}
         </select>
+        <button className="button" onClick={handleDeleteWorkflow} disabled={!selectedWorkflowId}>Delete</button>
+        <button className="button" onClick={handleEditWorkflow} disabled={!selectedWorkflowId}>Edit</button>
       </div>
       <div className="json-input-container">
         <h2>Input JSON Data:</h2>
