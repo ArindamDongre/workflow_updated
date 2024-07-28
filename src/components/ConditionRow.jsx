@@ -1,11 +1,11 @@
 // src/components/ConditionRow.jsx
 import React, { useState, useEffect } from "react";
-import "./ConditionRow.css"; // Import the CSS file
+import "./ConditionRow.css";
 
-const ConditionRow = ({ index, onConditionChange }) => {
-  const [firstDropdown, setFirstDropdown] = useState("");
-  const [textBoxValue, setTextBoxValue] = useState("");
-  const [secondDropdown, setSecondDropdown] = useState("");
+const ConditionRow = ({ index, onConditionChange, prefill }) => {
+  const [firstDropdown, setFirstDropdown] = useState(prefill?.Action || "");
+  const [textBoxValue, setTextBoxValue] = useState(prefill?.Condition || "");
+  const [secondDropdown, setSecondDropdown] = useState(prefill?.Activity || "");
 
   const parameters1 = ["Name", "Age", "Gender", "Pincode"];
   const parameters2 = ["Name", "Age", "Gender", "Pincode", "Loan Status"];

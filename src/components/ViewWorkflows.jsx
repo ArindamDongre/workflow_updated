@@ -53,12 +53,15 @@ const ViewWorkflows = () => {
     }
   };
 
-  const handleEditWorkflow = () => {
-    const selectedWorkflow = workflows.find(workflow => workflow.id === selectedWorkflowId);
-    if (selectedWorkflow) {
-      navigate(`/edit-workflow/${selectedWorkflowId}`, { state: { workflow: selectedWorkflow } });
-    }
-  };
+// src/components/ViewWorkflows.jsx
+const handleEditWorkflow = () => {
+  const selectedWorkflow = workflows.find(workflow => workflow.id === selectedWorkflowId);
+  if (selectedWorkflow) {
+    navigate(`/edit-workflow/${selectedWorkflowId}`, { state: { workflow: selectedWorkflow } });
+  }
+};
+
+
 
   return (
     <div className="view-workflows-container">
